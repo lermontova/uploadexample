@@ -9,6 +9,38 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <div class="col-md-4 push-down">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Uploads section</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          Add Files
+          <span class="btn btn-default dtn-file">
+            <input multiple class="file fileInput" type="file" />
+          </span>
+        </p>
+      </div>
+      <div class="panel-footer">
+        <div class="col-md-9">
+          <table class="table table-hover table-stripped table-bordered">
+            <thead>
+              <th>Name</th>
+              <th>Download</th>
+            </thead>
+            <tbody>
+              {{#each uploads}}
+              <tr>
+                <td>{{name}}</td>
+                <td>
+                <a class="btn btn-primary" href="{{url download=true}}">Download</a></td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
